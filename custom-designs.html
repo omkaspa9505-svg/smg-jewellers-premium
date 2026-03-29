@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Jewelry Designs | SMG Jewellers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- CRO Optimized Header (No Nav Links) -->
+    <header class="header">
+        <a href="index.html" class="logo">SMG <span>Jewellers</span></a>
+
+        <nav class="nav-links spoke-nav">
+            <!-- Hidden intentionally -->
+        </nav>
+
+        <div class="live-rate" id="live-rate-display"
+            style="background: transparent; border: none; box-shadow: none; backdrop-filter: none;">
+            <div class="rate-item" title="22K Gold per Gram in Hyderabad">
+                <div class="pulse"></div>
+                <span id="gold-rate" style="color: var(--gold);">Gold: ₹6,540/g</span>
+            </div>
+            <div class="rate-item" title="Silver per Gram in Hyderabad">
+                <div class="pulse silver-pulse"></div>
+                <span id="silver-rate" style="color: #E0E0E0;">Silver: ₹92/g</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="split-hero reveal active">
+        <img src="assets/custom_jewelry_comparison_1774739558881.png" alt="Custom Design Background" class="hero-bg">
+        <div class="hero-overlay" style="background: rgba(250, 247, 242, 0.9);"></div>
+
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Bring Your Dream Design to Life, for Less.</h1>
+            <p>Send us a photo of any design from Pinterest, Instagram, or high-end boutiques, and our master craftsmen
+                from Jaipur will recreate it identically at local wholesale prices.</p>
+
+            <!-- Comparison Container -->
+            <div class="comparison-ui">
+
+                <!-- Expensive Brand -->
+                <div class="comp-card comp-brand">
+                    <span class="comp-tag">Famous Brand Design</span>
+                    <!-- Reusing the generated custom jewelry comparison image by scaling and clipping -->
+                    <div
+                        style="height: 300px; overflow: hidden; border-radius: 10px; margin-bottom: 2rem; border: 1px solid #eee;">
+                        <img src="assets/custom_jewelry_comparison_1774739558881.png" alt="Expensive Brand"
+                            style="width: 200%; height: 100%; object-fit: cover; object-position: left center;">
+                    </div>
+                    <h3 style="font-size: 1.5rem; color: #666; margin-bottom: 0.5rem;">Sourced from Boutique</h3>
+                    <div class="comp-price-old">₹ 14,50,000</div>
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">Includes 25% Brand Markup</p>
+                </div>
+
+                <!-- Custom Creation -->
+                <div class="comp-card comp-custom">
+                    <span class="comp-tag" style="color: var(--maroon);">SMG Custom Creation</span>
+                    <div
+                        style="height: 300px; overflow: hidden; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                        <img src="assets/custom_jewelry_comparison_1774739558881.png" alt="Custom Recreation"
+                            style="width: 200%; height: 100%; object-fit: cover; object-position: right center; margin-left: -100%;">
+                    </div>
+                    <h3 style="font-size: 1.5rem; color: var(--maroon); margin-bottom: 0.5rem;">Exact Replica by SMG
+                    </h3>
+                    <div class="comp-price-new">₹ 5,80,000</div>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--maroon); margin-top: 1rem;"><i
+                            class="fa-solid fa-check"></i> 100% BIS Hallmarked 22k</p>
+                </div>
+
+            </div>
+
+            <!-- MASSIVE CTA -->
+            <a href="https://wa.me/919876543210?text=Hi!%20I%20would%20like%20to%20get%20a%20quote%20for%20a%20custom%20design."
+                class="massive-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Send Us a Photo for an Instant Quote
+            </a>
+
+            <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
+                <span style="font-size: 1rem; color: var(--gold-light);"><i class="fa-solid fa-shield"></i> Secure
+                    Order</span>
+                <span style="font-size: 1rem; color: var(--gold-light);"><i class="fa-solid fa-gem"></i> Artisan
+                    Crafted</span>
+                <span style="font-size: 1rem; color: var(--gold-light);"><i class="fa-solid fa-truck-fast"></i> Rapid
+                    Delivery</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Sticky WhatsApp -->
+    <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
