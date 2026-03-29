@@ -4,48 +4,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMG Jewellers | Pure Gold & Custom Designs in Hyderabad</title>
+    <title>SMG Jewellers | Pure Heritage Gold & Silver</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <span>100% BIS Hallmarked Jewellery</span>
+        <span>Trusted by Hyderabad since 1999</span>
+    </div>
 
     <!-- Header -->
     <header class="header">
         <a href="index.html" class="logo">SMG <span>Jewellers</span></a>
 
-        <nav class="nav-links">
+        <nav class="nav-links mobile-show">
             <a href="index.html" class="nav-link active">Home</a>
             <a href="about.html" class="nav-link">Our Story</a>
             <a href="gallery.html" class="nav-link">Collections</a>
-            <a href="custom-designs.html" class="nav-link text-gold">Custom Orders</a>
+            <a href="custom-designs.html" class="nav-link" style="color: var(--maroon); font-weight: 700;">Custom
+                Orders</a>
         </nav>
 
         <div class="live-rate" id="live-rate-display">
             <div class="rate-item" title="22K Gold per Gram in Hyderabad">
                 <div class="pulse"></div>
-                <span id="gold-rate" style="color: var(--gold);">Gold: ₹6,540/g</span>
+                <span id="gold-rate">Gold: ₹6,540/g</span>
             </div>
             <div class="rate-item" title="Silver per Gram in Hyderabad">
                 <div class="pulse silver-pulse"></div>
-                <span id="silver-rate" style="color: #E0E0E0;">Silver: ₹92/g</span>
+                <span id="silver-rate">Silver: ₹92/g</span>
             </div>
+        </div>
+
+        <div class="hamburger">
+            <i class="fa-solid fa-bars"></i>
         </div>
     </header>
 
+    <div class="mobile-menu">
+        <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="gallery.html">Collections</a>
+        <a href="custom-designs.html">Custom Orders</a>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero reveal active">
-        <img src="assets/bridal_jewelry_hero_1774739540869.png" alt="Bridal Jewelry" class="hero-bg">
+        <video autoplay muted loop playsinline class="hero-bg">
+            <source src="assets/smg_hero_bg.webm" type="video/webm">
+        </video>
         <div class="hero-overlay"></div>
-        <div class="container relative z-10">
-            <div class="hero-content">
-                <span class="hero-subtitle">Generations of Trust</span>
-                <h1 class="hero-title">Hyderabad's Premier Family Jeweler.</h1>
-                <p class="hero-text">Discover unparalleled craftsmanship from Jaipur's finest artisans. 100% BIS
-                    Hallmarked gold with unmatched local transparency.</p>
-                <a href="gallery.html" class="btn btn-primary">Explore Collections</a>
-            </div>
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1>Pure Heritage.<br>Exquisite Craftsmanship.</h1>
+            <p>Discover Hyderabad’s finest locally crafted Gold and Silver masterpiece jewellery, embodying generations
+                of trust and timeless beauty.</p>
+            <a href="gallery.html" class="btn btn-primary" style="margin-right: 1rem;">Explore Collections</a>
+            <a href="https://wa.me/919876543210" class="btn btn-outline" target="_blank"><i
+                    class="fa-brands fa-whatsapp"></i> Chat with Advisor</a>
         </div>
     </section>
 
@@ -63,7 +82,8 @@
             </div>
 
             <div class="reviews-grid" style="gap: 2rem; margin-top: 0;">
-                <div class="masonry-item" style="margin-bottom: 0;" onclick="window.location='gallery.html'">
+                <div class="masonry-item" style="margin-bottom: 0; cursor: pointer;"
+                    onclick="window.location='product.html?title=The+Grand+Bridal+Haram&img=assets/heavy_bridal_haram_1774742140736.png'">
                     <img src="assets/heavy_bridal_haram_1774742140736.png" alt="Heavy Bridal Haram"
                         style="height: 400px; object-fit: cover; border-radius: 10px;">
                     <div class="masonry-hover">
@@ -71,7 +91,8 @@
                         <p style="margin-bottom: 1rem;">22K Antique Temple Gold</p>
                     </div>
                 </div>
-                <div class="masonry-item" style="margin-bottom: 0;" onclick="window.location='gallery.html'">
+                <div class="masonry-item" style="margin-bottom: 0; cursor: pointer;"
+                    onclick="window.location='product.html?title=Vintage+Layered+Gold&img=assets/layered_emerald_polki_1774742157280.png'">
                     <img src="assets/layered_emerald_polki_1774742157280.png" alt="Vintage Layered Gold"
                         style="height: 400px; object-fit: cover; border-radius: 10px;">
                     <div class="masonry-hover">
@@ -79,7 +100,8 @@
                         <p style="margin-bottom: 1rem;">Traditional Design</p>
                     </div>
                 </div>
-                <div class="masonry-item" style="margin-bottom: 0;" onclick="window.location='gallery.html'">
+                <div class="masonry-item" style="margin-bottom: 0; cursor: pointer;"
+                    onclick="window.location='product.html?title=Royal+Temple+Bangle&img=assets/temple_gold_bangle_1774742118726.png'">
                     <img src="assets/temple_gold_bangle_1774742118726.png" alt="Temple Bangle"
                         style="height: 400px; object-fit: cover; border-radius: 10px;">
                     <div class="masonry-hover">
@@ -94,46 +116,47 @@
     <!-- Savings Plan -->
     <section class="section savings-section reveal">
         <div class="container">
-            <div class="savings-container">
-                <div class="savings-content">
-                    <h2 style="font-size: 3rem; margin-bottom: 2rem;">The Smart Gold Plan.</h2>
-                    <p style="font-size: 1.1rem; color: var(--text-light);">Invest in your family's future with our
-                        zero-compromise Swarn Nidhi plan. The most transparent way to build a legacy.</p>
-
-                    <ul class="feature-list">
-                        <li><i class="fa-solid fa-gem"></i> Pay 11 equal installments</li>
-                        <li><i class="fa-solid fa-gift"></i> Get the 12th installment FREE</li>
-                        <li><i class="fa-solid fa-percent"></i> ZERO Making Charges on redemption</li>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div>
+                    <span class="gold-badge">SMG Exclusive</span>
+                    <h2 style="font-size: 3.5rem; margin-top: 1rem;">11+1 Subarna Gold Plan</h2>
+                    <p style="font-size: 1.2rem; color: #555; margin-bottom: 2rem;">Invest in pure gold safely over 11
+                        months and receive 100% discount on making charges &amp; wastage during your 12th month
+                        redemption.</p>
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check text-gold"></i> Lock in today's best gold rates</li>
+                        <li><i class="fa-solid fa-check text-gold"></i> Zero making charges upon maturity</li>
+                        <li><i class="fa-solid fa-check text-gold"></i> Secure, verified investment ledger</li>
                     </ul>
+                    <a href="https://wa.me/919876543210?text=I%20want%20to%20join%20the%2011%2B1%20Gold%20Plan!"
+                        class="btn btn-primary" style="margin-top: 2rem;" target="_blank">Start Saving Today</a>
                 </div>
-
-                <div class="savings-form-wrapper">
-                    <h3 style="font-size: 2rem; margin-bottom: 1rem;">Join the Waitlist</h3>
-                    <p style="margin-bottom: 2rem;">Speak to an SMG advisor today.</p>
-                    <form>
-                        <input type="text" class="form-input" placeholder="Full Name" required>
-                        <input type="tel" class="form-input" placeholder="Phone Number" required>
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Request
-                            Callback</button>
-                    </form>
+                <div class="savings-card">
+                    <h3
+                        style="font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--maroon); border-bottom: 2px solid var(--cream-dark); padding-bottom: 1rem;">
+                        Plan Benefits</h3>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; font-size: 1.2rem;">
+                            <span>Monthly Installments</span>
+                            <span style="font-weight: 600;">11 Months</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 1.2rem;">
+                            <span>SMG Contribution</span>
+                            <span style="font-weight: 600;">1 Month Free</span>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; font-size: 1.2rem; color: var(--gold); font-weight: bold;">
+                            <span>Total Making Charges</span>
+                            <span>0%</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Custom Designs Promo -->
-    <section class="section reveal" style="background: var(--maroon);">
-        <div class="container" style="text-align: center;">
-            <h2 style="font-size: 3rem; color: var(--gold); margin-bottom: 1.5rem;">Have a design in mind?</h2>
-            <p style="color: var(--cream); font-size: 1.2rem; max-width: 600px; margin: 0 auto 3rem;">We can recreate
-                any luxury brand design at local wholesale prices, crafted by master goldsmiths from Jaipur.</p>
-            <a href="custom-designs.html" class="btn btn-primary"
-                style="background: var(--gold); color: var(--maroon);">Get an Instant Quote &rarr;</a>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="section reveal">
+    <!-- Social Proof -->
+    <section class="section reveal" style="background: var(--cream);">
         <div class="container">
             <h2 style="font-size: 3rem; text-align: center; margin-bottom: 1rem;">Voices of Heritage</h2>
             <p style="text-align: center; color: var(--text-light);">Why thousands of Hyderabad families trust SMG.</p>
@@ -180,7 +203,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="#" class="footer-logo">SMG <span>Jewellers</span></a>
+                    <a href="index.html" class="footer-logo">SMG <span>Jewellers</span></a>
                     <p style="color: rgba(250, 247, 242, 0.7); margin-top: 1rem;">Pure heritage. Honest pricing.
                         Exquisite craftsmanship.</p>
                 </div>
@@ -190,7 +213,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">Our Story</a></li>
                         <li><a href="gallery.html">Collections</a></li>
-                        <li><a href="custom-designs.html">Bespoke Orders</a></li>
+                        <li><a href="custom-designs.html">Custom Orders</a></li>
                     </ul>
                 </div>
                 <div>
@@ -217,6 +240,7 @@
         </div>
     </footer>
 
+    <!-- Sticky WhatsApp -->
     <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
