@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | SMG Jewellers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .product-page {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding: 6rem 5%;
+            background: var(--cream);
+            min-height: 80vh;
+        }
+
+        .product-image-container {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-title {
+            font-size: 3.5rem;
+            color: var(--maroon);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .product-meta {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .product-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .wa-btn-large {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            background: #25D366;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+            margin-top: 1rem;
+            width: fit-content;
+        }
+
+        .wa-btn-large:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+        }
+
+        @media (max-width: 900px) {
+            .product-page {
+                grid-template-columns: 1fr;
+                padding: 6rem 20px;
+            }
+
+            .product-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header" style="background: var(--maroon);">
+        <a href="index.html" class="logo" style="color: var(--cream);">SMG <span
+                style="color: var(--gold);">Jewellers</span></a>
+        <nav class="nav-links mobile-show">
+            <a href="index.html" class="nav-link" style="color: var(--cream);">Home</a>
+            <a href="about.html" class="nav-link" style="color: var(--cream);">Our Story</a>
+            <a href="gallery.html" class="nav-link" style="color: var(--cream);">Collections</a>
+            <a href="custom-designs.html" class="nav-link" style="color: var(--cream);">Custom Orders</a>
+        </nav>
+        <div class="hamburger" style="color: var(--cream);"><i class="fa-solid fa-bars"></i></div>
+    </header>
+
+    <div class="mobile-menu">
+        <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="gallery.html">Collections</a>
+        <a href="custom-designs.html">Custom Orders</a>
+    </div>
+
+    <!-- Product Content -->
+    <div class="product-page">
+        <div class="product-image-container">
+            <img id="pd-image" src="assets/gold_store_interior_1774739577686.png" alt="Product Image">
+        </div>
+        <div class="product-details">
+            <a href="javascript:history.back()"
+                style="color: var(--gold-dark); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 600;"><i
+                    class="fa-solid fa-arrow-left"></i> Back to Gallery</a>
+
+            <h1 class="product-title" id="pd-title">Premium Masterpiece</h1>
+
+            <div class="product-meta">
+                <span><i class="fa-solid fa-gem" style="color: var(--gold);"></i> 22K / 916 BIS Hallmark</span>
+                <span><i class="fa-solid fa-certificate" style="color: var(--gold);"></i> Certified Pure</span>
+            </div>
+
+            <p style="font-size: 1.2rem; color: #444; line-height: 1.8; margin-bottom: 2rem;">
+                Handcrafted by master artisans. This exquisite piece represents the pinnacle of traditional Indian
+                jewelry making, perfectly blending heritage design with modern elegance. Every detail is painstakingly
+                crafted to perfection.
+            </p>
+
+            <div
+                style="background: white; padding: 2rem; border-radius: 10px; border-left: 4px solid var(--gold); margin-bottom: 2rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <h4 style="margin-bottom: 0.5rem; color: var(--maroon);">Price on Request</h4>
+                <p style="color: #666; font-size: 0.95rem;">Gold and silver prices fluctuate daily. Please contact our
+                    advisors via WhatsApp for today's exact pricing and weight details.</p>
+            </div>
+
+            <a id="pd-wa-link" href="#" class="wa-btn-large" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="footer-logo">SMG <span>Jewellers</span></a>
+                    <p style="color: rgba(250, 247, 242, 0.7); margin-top: 1rem;">Pure heritage. Honest pricing.
+                        Exquisite craftsmanship.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SMG Jewellers. All Rights Reserved.</p>
+                <p>A Tradition of Purity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const title = urlParams.get('title');
+            const imgParams = urlParams.getAll('img');
+            
+            const img = imgPara;
+
+             if (title) document.getElementById('pd-title').textContent = title;
+            if (img) document.getElementById('pd-image').src = img;
+
+            const waMessage = `Hi SMm interested in the ${title ? title : 'piece'} I saw on your website. Could you please share the exact weight and today's price?`;
+            const waLink = `https://wa.me/919876543210?text=${encodeURIComponent(waMessage)}`;
+            document.getElementById('pd-wa-link').href = waLink;
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
