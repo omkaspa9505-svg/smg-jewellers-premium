@@ -4,44 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery | SMG Jewellers</title>
+    <title>Collections | SMG Jewellers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header class="header">
-        <a href="index.html" class="logo">SMG <span>Jewellers</span></a>
+    <header class="header" style="background: var(--maroon);">
+        <a href="index.html" class="logo" style="color: var(--cream);">SMG <span
+                style="color: var(--gold);">Jewellers</span></a>
 
-        <nav class="nav-links">
-            <a href="index.html" class="nav-link">Home</a>
-            <a href="about.html" class="nav-link">Our Story</a>
-            <a href="gallery.html" class="nav-link active">Collections</a>
-            <a href="custom-designs.html" class="nav-link text-gold">Custom Orders</a>
+        <nav class="nav-links mobile-show">
+            <a href="index.html" class="nav-link" style="color: var(--cream);">Home</a>
+            <a href="about.html" class="nav-link" style="color: var(--cream);">Our Story</a>
+            <a href="gallery.html" class="nav-link active" style="color: var(--gold);">Collections</a>
+            <a href="custom-designs.html" class="nav-link" style="color: var(--cream); font-weight: 700;">Custom
+                Orders</a>
         </nav>
 
-        <div class="live-rate" id="live-rate-display">
-            <div class="rate-item" title="22K Gold per Gram in Hyderabad">
-                <div class="pulse"></div>
-                <span id="gold-rate" style="color: var(--gold);">Gold: ₹6,540/g</span>
-            </div>
-            <div class="rate-item" title="Silver per Gram in Hyderabad">
-                <div class="pulse silver-pulse"></div>
-                <span id="silver-rate" style="color: #E0E0E0;">Silver: ₹92/g</span>
-            </div>
+        <div class="hamburger" style="color: var(--cream);">
+            <i class="fa-solid fa-bars"></i>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header reveal active">
-        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1600&q=80" alt="Gold Background"
-            class="hero-bg">
+    <div class="mobile-menu">
+        <div class="close-menu"><i class="fa-solid fa-xmark"></i></div>
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="gallery.html">Collections</a>
+        <a href="custom-designs.html">Custom Orders</a>
+    </div>
+
+    <!-- Inner Hero -->
+    <section class="inner-hero" style="min-height: 40vh;">
+        <img src="assets/implementation_plan-2026-03-29-04-34-45.avif"
+            onerror="this.src='https://images.unsplash.com/photo-1599643478524-fb66f45620de?q=80&w=2070&auto=format&fit=crop'"
+            alt="Gallery Hero" class="hero-bg">
         <div class="hero-overlay" style="background: rgba(250, 247, 242, 0.85);"></div>
 
         <h1>The Digital Catalog</h1>
-        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto;">Explore our curated archives of bridal sets,
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: var(--maroon);">Explore our curated
+            archives of bridal sets,
             antique temple jewelry, and bespoke minimal pieces.</p>
     </section>
 
@@ -50,68 +54,93 @@
         <div class="container masonry">
 
             <!-- Item -->
-            <div class="masonry-item">
+            <div class="masonry-item" style="cursor: pointer;"
+                onclick="window.location='product.html?title=Royal+Bridal+Collection&img=assets/bridal_jewelry_hero_1774739540869.png'">
                 <img src="assets/bridal_jewelry_hero_1774739540869.png" alt="Bridal">
                 <div class="masonry-hover">
                     <h3 class="item-name">Royal Bridal Collection</h3>
                     <p style="margin-bottom: 2rem;">22K Antique Finish</p>
-                    <a href="https://wa.me/919876543210" class="inquire-btn"><i class="fa-brands fa-whatsapp"></i>
-                        Inquire Price</a>
+                    <a href="product.html?title=Royal+Bridal+Collection&img=assets/bridal_jewelry_hero_1774739540869.png"
+                        class="inquire-btn" style="background: var(--gold); color: var(--maroon); border: none;"><i
+                            class="fa-solid fa-eye"></i> View Details</a>
                 </div>
             </div>
 
             <!-- Item -->
-            <div class="masonry-item">
+            <div class="masonry-item" style="cursor: pointer;"
+                onclick="window.location='product.html?title=The+Grand+Bridal+Haram&img=assets/heavy_bridal_haram_1774742140736.png'">
                 <img src="assets/heavy_bridal_haram_1774742140736.png" alt="Heavy Bridal Haram">
                 <div class="masonry-hover">
                     <h3 class="item-name">The Grand Bridal Haram</h3>
                     <p style="margin-bottom: 2rem;">Polkis & Emerald Set</p>
-                    <a href="https://wa.me/919876543210" class="inquire-btn"><i class="fa-brands fa-whatsapp"></i>
-                        Inquire Price</a>
+                    <a href="product.html?title=The+Grand+Bridal+Haram&img=assets/heavy_bridal_haram_1774742140736.png"
+                        class="inquire-btn" style="background: var(--gold); color: var(--maroon); border: none;"><i
+                            class="fa-solid fa-eye"></i> View Details</a>
                 </div>
             </div>
 
             <!-- Item -->
-            <div class="masonry-item">
+            <div class="masonry-item" style="cursor: pointer;"
+                onclick="window.location='product.html?title=Temple+Heritage+Bangle&img=assets/temple_gold_bangle_1774742118726.png'">
                 <img src="assets/temple_gold_bangle_1774742118726.png" alt="Temple Bangle">
                 <div class="masonry-hover">
                     <h3 class="item-name">Temple Heritage Bangle</h3>
                     <p style="margin-bottom: 2rem;">22K Antique with Rubies</p>
-                    <a href="https://wa.me/919876543210" class="inquire-btn"><i class="fa-brands fa-whatsapp"></i>
-                        Inquire Price</a>
+                    <a href="product.html?title=Temple+Heritage+Bangle&img=assets/temple_gold_bangle_1774742118726.png"
+                        class="inquire-btn" style="background: var(--gold); color: var(--maroon); border: none;"><i
+                            class="fa-solid fa-eye"></i> View Details</a>
                 </div>
             </div>
 
             <!-- Item -->
-            <div class="masonry-item">
+            <div class="masonry-item" style="cursor: pointer;"
+                onclick="window.location='product.html?title=Emerald+Layers&img=assets/layered_emerald_polki_1774742157280.png'">
                 <img src="assets/layered_emerald_polki_1774742157280.png" alt="Layered Emerald Necklace">
                 <div class="masonry-hover">
                     <h3 class="item-name">Emerald Layers</h3>
                     <p style="margin-bottom: 2rem;">Strung Emeralds with Polki</p>
-                    <a href="https://wa.me/919876543210" class="inquire-btn"><i class="fa-brands fa-whatsapp"></i>
-                        Inquire Price</a>
+                    <a href="product.html?title=Emerald+Layers&img=assets/layered_emerald_polki_1774742157280.png"
+                        class="inquire-btn" style="background: var(--gold); color: var(--maroon); border: none;"><i
+                            class="fa-solid fa-eye"></i> View Details</a>
                 </div>
             </div>
 
             <!-- Item -->
-            <div class="masonry-item">
+            <div class="masonry-item" style="cursor: pointer;"
+                onclick="window.location='product.html?title=Exclusive+Bridal+Display&img=assets/hexagonal_wall_display_1774742103158.png'">
                 <img src="assets/hexagonal_wall_display_1774742103158.png" alt="Hexagonal Displays">
                 <div class="masonry-hover">
                     <h3 class="item-name">Exclusive Bridal Display</h3>
                     <p style="margin-bottom: 2rem;">View in our Premium Store</p>
-                    <a href="https://wa.me/919876543210" class="inquire-btn"><i class="fa-brands fa-whatsapp"></i>
-                        Inquire Price</a>
+                    <a href="product.html?title=Exclusive+Bridal+Display&img=assets/hexagonal_wall_display_1774742103158.png"
+                        class="inquire-btn" style="background: var(--gold); color: var(--maroon); border: none;"><i
+                            class="fa-solid fa-eye"></i> View Details</a>
                 </div>
             </div>
 
             <!-- Item -->
-            <div class="masonry-item">
+            <div class="masonry-item" style="cursor: pointer;"
+                onclick="window.location='product.html?title=Pure+Silver+Kalash&img=assets/silver_kalash_pooja_1774742089451.png'">
                 <img src="assets/silver_kalash_pooja_1774742089451.png" alt="Silver Kalash">
                 <div class="masonry-hover">
                     <h3 class="item-name">Pure Silver Kalash</h3>
-                    <p style="margin-bottom: 2rem;">Ornate Pooja Collection</p>
-                    <a href="https://wa.me/919876543210" class="inquire-btn"><i class="fa-brands fa-whatsapp"></i>
-                        Inquire Price</a>
+                    <p style="margin-bottom: 2rem;">92.5 Sterling Silver for Pooja</p>
+                    <a href="product.html?title=Pure+Silver+Kalash&img=assets/silver_kalash_pooja_1774742089451.png"
+                        class="inquire-btn" style="background: var(--gold); color: var(--maroon); border: none;"><i
+                            class="fa-solid fa-eye"></i> View Details</a>
+                </div>
+            </div>
+
+            <!-- Additional Items... -->
+            <div class="masonry-item" style="cursor: pointer;"
+                onclick="window.location='product.html?title=Bridal+Enclave&img=assets/gold_store_interior_1774739577686.png'">
+                <img src="assets/gold_store_interior_1774739577686.png" alt="Interior">
+                <div class="masonry-hover">
+                    <h3 class="item-name">Bridal Enclave</h3>
+                    <p style="margin-bottom: 2rem;">Experiential Shopping</p>
+                    <a href="product.html?title=Bridal+Enclave&img=assets/gold_store_interior_1774739577686.png"
+                        class="inquire-btn" style="background: var(--gold); color: var(--maroon); border: none;"><i
+                            class="fa-solid fa-eye"></i> View Details</a>
                 </div>
             </div>
 
@@ -123,7 +152,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <a href="#" class="footer-logo">SMG <span>Jewellers</span></a>
+                    <a href="index.html" class="footer-logo">SMG <span>Jewellers</span></a>
                     <p style="color: rgba(250, 247, 242, 0.7); margin-top: 1rem;">Pure heritage. Honest pricing.
                         Exquisite craftsmanship.</p>
                 </div>
@@ -133,7 +162,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">Our Story</a></li>
                         <li><a href="gallery.html">Collections</a></li>
-                        <li><a href="custom-designs.html">Bespoke Orders</a></li>
+                        <li><a href="custom-designs.html">Custom Orders</a></li>
                     </ul>
                 </div>
                 <div>
@@ -160,6 +189,7 @@
         </div>
     </footer>
 
+    <!-- Sticky WhatsApp -->
     <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
