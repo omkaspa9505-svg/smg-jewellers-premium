@@ -11,15 +11,25 @@
 
 <body>
 
-    <!-- CRO Optimized Header (No Nav Links but contains a Back button) -->
+    <!-- CRO Optimized Header (No Nav Links) -->
     <header class="header">
         <a href="index.html" class="logo">SMG <span>Jewellers</span></a>
 
-        <nav class="nav-links">
-            <a href="index.html" class="nav-link"><i class="fa-solid fa-arrow-left"></i> Back to Homepage</a>
+        <nav class="nav-links spoke-nav">
+            <!-- Hidden intentionally -->
         </nav>
 
-        <!-- Live rates removed to focus 100% on conversion as requested -->
+        <div class="live-rate" id="live-rate-display"
+            style="background: transparent; border: none; box-shadow: none; backdrop-filter: none;">
+            <div class="rate-item" title="22K Gold per Gram in Hyderabad">
+                <div class="pulse"></div>
+                <span id="gold-rate" style="color: var(--gold);">Gold: ₹6,540/g</span>
+            </div>
+            <div class="rate-item" title="Silver per Gram in Hyderabad">
+                <div class="pulse silver-pulse"></div>
+                <span id="silver-rate" style="color: #E0E0E0;">Silver: ₹92/g</span>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -28,64 +38,49 @@
         <div class="hero-overlay" style="background: rgba(250, 247, 242, 0.9);"></div>
 
         <div class="container" style="position: relative; z-index: 2;">
-            <h1 style="font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem;">
-                Bring Your Dream Design to Life.
-            </h1>
-            <p style="font-size: 1.2rem; color: var(--text-light); max-width: 800px; margin: 0 auto 4rem;">
-                Send us a photo of any design from Pinterest, Instagram, or from your favorite brands. Our master
-                craftsmen from Jaipur will recreate it perfectly for you in gold, silver, or any precious metal you
-                choose—at local wholesale prices.
-            </p>
+            <h1>Bring Your Dream Design to Life, for Less.</h1>
+            <p>Send us a photo of any design from Pinterest, Instagram, or high-end boutiques, and our master craftsmen
+                from Jaipur will recreate it identically at local wholesale prices.</p>
 
-            <!-- 3 Step Process -->
-            <div
-                style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 3rem; text-align: left;">
-                <div
-                    style="background: #fff; padding: 2rem; border-radius: 10px; border: 1px solid var(--cream-dark); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-                    <i class="fa-solid fa-image text-gold" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--maroon);">1. Share a Photo</h3>
-                    <p style="font-size: 1rem; color: var(--text-light);">Send us an image of your dream design via
-                        WhatsApp or via the form below.</p>
+            <!-- Comparison Container -->
+            <div class="comparison-ui">
+
+                <!-- Expensive Brand -->
+                <div class="comp-card comp-brand">
+                    <span class="comp-tag">Famous Brand Design</span>
+                    <!-- Reusing the generated custom jewelry comparison image by scaling and clipping -->
+                    <div
+                        style="height: 300px; overflow: hidden; border-radius: 10px; margin-bottom: 2rem; border: 1px solid #eee;">
+                        <img src="assets/custom_jewelry_comparison_1774739558881.png" alt="Expensive Brand"
+                            style="width: 200%; height: 100%; object-fit: cover; object-position: left center;">
+                    </div>
+                    <h3 style="font-size: 1.5rem; color: #666; margin-bottom: 0.5rem;">Sourced from Boutique</h3>
+                    <div class="comp-price-old">₹ 14,50,000</div>
+                    <p style="font-size: 0.9rem; color: #888; margin-top: 1rem;">Includes 25% Brand Markup</p>
                 </div>
-                <div
-                    style="background: #fff; padding: 2rem; border-radius: 10px; border: 1px solid var(--cream-dark); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-                    <i class="fa-solid fa-calculator text-gold" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--maroon);">2. Instant Estimate</h3>
-                    <p style="font-size: 1rem; color: var(--text-light);">Get a clear, honest quote based on exactly
-                        what materials are needed.</p>
+
+                <!-- Custom Creation -->
+                <div class="comp-card comp-custom">
+                    <span class="comp-tag" style="color: var(--maroon);">SMG Custom Creation</span>
+                    <div
+                        style="height: 300px; overflow: hidden; border-radius: 10px; margin-bottom: 2rem; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+                        <img src="assets/custom_jewelry_comparison_1774739558881.png" alt="Custom Recreation"
+                            style="width: 200%; height: 100%; object-fit: cover; object-position: right center; margin-left: -100%;">
+                    </div>
+                    <h3 style="font-size: 1.5rem; color: var(--maroon); margin-bottom: 0.5rem;">Exact Replica by SMG
+                    </h3>
+                    <div class="comp-price-new">₹ 5,80,000</div>
+                    <p style="font-size: 0.9rem; font-weight: 600; color: var(--maroon); margin-top: 1rem;"><i
+                            class="fa-solid fa-check"></i> 100% BIS Hallmarked 22k</p>
                 </div>
-                <div
-                    style="background: #fff; padding: 2rem; border-radius: 10px; border: 1px solid var(--cream-dark); box-shadow: 0 10px 30px rgba(0,0,0,0.03);">
-                    <i class="fa-solid fa-hammer text-gold" style="font-size: 2.5rem; margin-bottom: 1.5rem;"></i>
-                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--maroon);">3. Artisan Crafted</h3>
-                    <p style="font-size: 1rem; color: var(--text-light);">Your custom piece is beautifully created,
-                        hallmarked for purity, and securely delivered.</p>
-                </div>
+
             </div>
 
-            <!-- WhatsApp CTA -->
+            <!-- MASSIVE CTA -->
             <a href="https://wa.me/919876543210?text=Hi!%20I%20would%20like%20to%20get%20a%20quote%20for%20a%20custom%20design."
-                class="massive-btn" target="_blank" style="margin-top: 0; display: inline-block;">
-                <i class="fa-brands fa-whatsapp"></i> Send Us a Photo on WhatsApp
+                class="massive-btn" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i> Send Us a Photo for an Instant Quote
             </a>
-
-            <!-- Form Section for non-WhatsApp users -->
-            <div
-                style="background: var(--cream); padding: 3rem; border-radius: 10px; max-width: 600px; margin: 4rem auto 0; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid var(--cream-dark);">
-                <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--maroon); text-align: center;">Request a
-                    Custom Quote</h3>
-                <p style="text-align: center; color: var(--text-light); margin-bottom: 2rem;">Don't use WhatsApp? Just
-                    fill out this form and our advisors will call you back.</p>
-                <form>
-                    <input type="text" class="form-input" placeholder="Full Name" required style="background: #fff;">
-                    <input type="tel" class="form-input" placeholder="Phone Number" required style="background: #fff;">
-                    <textarea class="form-input"
-                        placeholder="Tell us about the design you want... (e.g. 'I want a classic Temple Gold Haram like the ones on Pinterest')"
-                        style="background: #fff; min-height: 120px; resize: vertical; margin-bottom: 1.5rem;"></textarea>
-                    <button type="button" class="btn btn-primary" style="width: 100%; border-radius: 5px;">Submit
-                        Request</button>
-                </form>
-            </div>
 
             <div style="margin-top: 3rem; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
                 <span style="font-size: 1rem; color: var(--gold-light);"><i class="fa-solid fa-shield"></i> Secure
@@ -98,48 +93,6 @@
 
         </div>
     </section>
-
-    <!-- Footer Area Matches Homepage -->
-    <footer class="footer reveal">
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <a href="index.html" class="footer-logo">SMG <span>Jewellers</span></a>
-                    <p style="color: rgba(250, 247, 242, 0.7); margin-top: 1rem;">Pure heritage. Honest pricing.
-                        Exquisite craftsmanship.</p>
-                </div>
-                <div>
-                    <h4 class="footer-title">Explore</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">Our Story</a></li>
-                        <li><a href="gallery.html">Collections</a></li>
-                        <li><a href="custom-designs.html">Custom Orders</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-title">Visit Us</h4>
-                    <ul class="footer-links">
-                        <li>Road No 12, Banjara Hills</li>
-                        <li>Hyderabad, TS 500034</li>
-                        <li>Mon - Sat: 10:30 AM - 8:30 PM</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="footer-title">Contact</h4>
-                    <ul class="footer-links">
-                        <li>+91 98765 43210</li>
-                        <li>hello@smgjewellers.com</li>
-                        <li>100% BIS Hallmarked</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 SMG Jewellers. All Rights Reserved.</p>
-                <p>A Tradition of Purity.</p>
-            </div>
-        </div>
-    </footer>
 
     <!-- Sticky WhatsApp -->
     <a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">
