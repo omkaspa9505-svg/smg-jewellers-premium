@@ -56,8 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (savingsForm) {
         savingsForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = (savingsForm.querySelector('#savings-name') || savingsForm.querySelector('input[placeholder*="Name"]'))?.value.trim() || 'Customer';
-            const name = savingsForm.querySelector('input[placeholder*="Name"]')?.value.trim() || 'Savings Lead';
+            const name = (savingsForm.querySelector('#savings-name') || savingsForm.querySelector('input[name="name"]'))?.value.trim() || 'Savings Lead';
             const phone = savingsForm.querySelector('input[name="phone"]')?.value.trim() || '';
             if (!phone) { showNotification('Please enter your phone number.', 'error'); return; }
             submitLead({ name, phone, source: 'Gold Savings Plan' }, savingsForm);
