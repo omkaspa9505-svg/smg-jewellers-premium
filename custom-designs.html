@@ -111,11 +111,13 @@
                             placeholder="E.g., I want a 22K gold choker similar to..." required=""
                             style="width: 100%; padding: 1rem; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; background: #f9f9f9; min-height: 100px;"></textarea>
                     </div>
-                    <div style="margin-bottom: 1.5rem;"><label
-                            style="display: block; margin-bottom: 0.5rem; color: var(--maroon); font-weight: 600;">Attach
-                            Reference Image (Optional)</label><input name="image" accept="image/*"
-                            style="width: 100%; padding: 1rem; border: 1px dashed #ddd; border-radius: 8px; background: #fff;"
-                            type="file" /></div><button
+                    <div style="margin-bottom: 1.5rem; position: relative;">
+                        <label style="display: block; margin-bottom: 0.5rem; color: var(--maroon); font-weight: 600;">Attach Reference Image (Optional)</label>
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <input name="image" id="image-upload" accept="image/*" style="width: 100%; padding: 1rem; border: 1px dashed #ddd; border-radius: 8px; background: #fff;" type="file" />
+                            <button type="button" id="remove-image-btn" style="display: none; width: fit-content; background: #ff4d4d; color: white; border: none; padding: 5px 12px; border-radius: 4px; font-size: 0.8rem; cursor: pointer; transition: all 0.3s ease;">Remove Photo</button>
+                        </div>
+                    </div><button
                         style="background: var(--maroon); color: var(--cream); border: none; padding: 1.2rem; width: 100%; font-size: 1.2rem; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; font-weight: 600;"
                         type="submit">Send Us Your Idea</button>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: #888; text-align: center;"><i

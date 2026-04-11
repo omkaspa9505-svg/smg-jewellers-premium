@@ -74,6 +74,25 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!phone) { showNotification('Please enter your phone number.', 'error'); return; }
             submitLead({ name, phone, source: 'Custom Design Inquiry', design }, customForm);
         });
+
+        // Image Selection Helper
+        const imageInput = document.getElementById('image-upload');
+        const removeBtn = document.getElementById('remove-image-btn');
+
+        if (imageInput && removeBtn) {
+            imageInput.addEventListener('change', () => {
+                if (imageInput.files && imageInput.files.length > 0) {
+                    removeBtn.style.display = 'block';
+                } else {
+                    removeBtn.style.display = 'none';
+                }
+            });
+
+            removeBtn.addEventListener('click', () => {
+                imageInput.value = '';
+                removeBtn.style.display = 'none';
+            });
+        }
     }
 
     // Initialize Rates
