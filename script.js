@@ -57,8 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
         savingsForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const name = (savingsForm.querySelector('#savings-name') || savingsForm.querySelector('input[placeholder*="Name"]'))?.value.trim() || 'Customer';
-            const phone = (savingsForm.querySelector('#savings-phone') || savingsForm.querySelector('input[placeholder*="Phone"]'))?.value.trim() || '';
-            if (!phone) { alert('Please enter your phone number.'); return; }
+            const name = savingsForm.querySelector('input[placeholder*="Name"]')?.value.trim() || 'Savings Lead';
+            const phone = savingsForm.querySelector('input[name="phone"]')?.value.trim() || '';
+            if (!phone) { showNotification('Please enter your phone number.', 'error'); return; }
             submitLead({ name, phone, source: 'Gold Savings Plan' }, savingsForm);
         });
     }
@@ -68,10 +69,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (customForm) {
         customForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            const name = customForm.querySelector('input[placeholder*="Name"]')?.value.trim() || 'Customer';
-            const phone = customForm.querySelector('input[placeholder*="Phone"]')?.value.trim() || '';
+            const name = customForm.querySelector('input[name="name"]')?.value.trim() || 'Customer';
+            const phone = customForm.querySelector('input[name="phone"]')?.value.trim() || '';
             const design = customForm.querySelector('textarea')?.value.trim() || '';
-            if (!phone) { alert('Please enter your phone number.'); return; }
+            if (!phone) { showNotification('Please enter your phone number.', 'error'); return; }
             submitLead({ name, phone, source: 'Custom Design Inquiry', design }, customForm);
         });
     }
@@ -208,13 +209,15 @@ async function submitLead(data, form) {
                 'marketing_source': attribution.utm_source || 'direct'
             });
 
-            alert('Thank you! Our team will contact you shortly.');
+            showNotification('Thank you! Our team will contact you shortly.', 'success');
             form.reset();
         } else {
             throw new Error(result.message);
         }
     } catch (error) {
         console.error('Lead submission error:', error);
+        showNotification('Submitting... Opening WhatsApp for quick contact.', 'success');
+        
         // Fallback: open WhatsApp if API fails
         const utmString = attribution.utm_source ? ` [Source: ${attribution.utm_source}]` : '';
         const msg = encodeURIComponent(`Hi SMG Jewellers! My name is ${data.name}. Phone: ${data.phone}. ${data.design ? 'Design idea: ' + data.design : data.source}${utmString}`);
@@ -225,4 +228,32 @@ async function submitLead(data, form) {
             submitBtn.disabled = false;
         }
     }
+}
+
+/**
+ * Show a modern, animated notification toast
+ */
+function showNotification(message, type = 'success') {
+    let container = document.querySelector('.smg-notification-container');
+    if (!container) {
+        container = document.createElement('div');
+        container.className = 'smg-notification-container';
+        document.body.appendChild(container);
+    }
+
+    const toast = document.createElement('div');
+    toast.className = `smg-toast ${type}`;
+    
+    const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+    toast.innerHTML = `<i class="fa-solid ${icon}"></i> <span>${message}</span>`;
+    
+    container.appendChild(toast);
+
+    // Remove toast after animation finishes
+    setTimeout(() => {
+        toast.remove();
+        if (container.childNodes.length === 0) {
+            container.remove();
+        }
+    }, 5000);
 }

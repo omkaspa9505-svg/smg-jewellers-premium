@@ -1087,6 +1087,59 @@ h4,
     transform: rotate(90deg);
 }
 
+/* --- Custom Notification System (Toast) --- */
+.smg-notification-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10000;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.smg-toast {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    animation: toastSlideIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
+               toastFadeOut 0.5s ease 4.5s forwards;
+    pointer-events: auto;
+    min-width: 300px;
+}
+
+.smg-toast.error {
+    border-color: #ff4d4d;
+}
+
+.smg-toast.error i {
+    color: #ff4d4d;
+}
+
+.smg-toast.success i {
+    color: var(--gold);
+}
+
+@keyframes toastSlideIn {
+    from { opacity: 0; transform: translateY(-100%); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes toastFadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+}
+
 .modal-body {
     padding: 1rem 1.2rem;
     display: flex;
