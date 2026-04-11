@@ -17,7 +17,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ success: false, message: 'Method not allowed' });
   }
 
-  const { name, phone, source, design, timestamp, attribution } = req.body;
+  const { name, phone, source, design, timestamp, attribution, imageData } = req.body;
 
   if (!name || !phone) {
     return res.status(400).json({ success: false, message: 'Name and phone are required' });
@@ -50,29 +50,55 @@ export default async function handler(req, res) {
 
   // If Telegram credentials are missing, log and return success
   if (!BOT_TOKEN || !CHAT_ID) {
-    console.warn('Telegram credentials missing. Lead logged:');
-    console.log({ name, phone, source, design, timestamp });
+    console.warn('Telegram credentials missing.');
     return res.status(200).json({
       success: true,
-      message: 'Lead captured (configure TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID in Vercel for live alerts)'
+      message: 'Lead captured (configure credentials in Vercel for live alerts)'
     });
   }
 
   try {
-    const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
+    let endpoint = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+    let body;
+    let headers = {};
+
+    if (imageData && imageData.startsWith('data:image')) {
+      // Use sendPhoto for submissions with images
+      endpoint = `https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto`;
+      
+      const formData = new FormData();
+      formData.append('chat_id', CHAT_ID);
+      formData.append('caption', message);
+      formData.append('parse_mode', 'HTML');
+      
+      // Convert base64 to Blob
+      const base64Data = imageData.split(',')[1];
+      const buffer = Buffer.from(base64Data, 'base64');
+      const blob = new Blob([buffer], { type: 'image/jpeg' });
+      formData.append('photo', blob, 'design_reference.jpg');
+      
+      body = formData;
+      // Fetch will automatically set the correct multipart boundary
+    } else {
+      // Fallback to standard sendMessage
+      headers = { 'Content-Type': 'application/json' };
+      body = JSON.stringify({
         chat_id: CHAT_ID,
         text: message,
         parse_mode: 'HTML'
-      })
+      });
+    }
+
+    const response = await fetch(endpoint, {
+      method: 'POST',
+      headers,
+      body
     });
 
     const data = await response.json();
 
     if (data.ok) {
-      return res.status(200).json({ success: true, message: 'Lead sent! We will contact you shortly.' });
+      return res.status(200).json({ success: true, message: 'Lead sent!' });
     } else {
       console.error('Telegram API error:', data);
       return res.status(500).json({ success: false, message: 'Notification failed' });

@@ -201,10 +201,25 @@ async function submitLead(data, form) {
         submitBtn.disabled = true;
     }
 
+    // Handle Image Attachment with Compression
+    let imageData = null;
+    const fileInput = form.querySelector('input[type="file"]');
+    if (fileInput && fileInput.files && fileInput.files[0]) {
+        if (submitBtn) submitBtn.textContent = 'Optimizing Image...';
+        try {
+            imageData = await compressImage(fileInput.files[0]);
+        } catch (e) {
+            console.error('Compression failed, sending raw if small enough', e);
+        }
+    }
+
+    if (submitBtn) submitBtn.textContent = 'Sending Lead...';
+
     // Merge Attribution Data
     const attribution = JSON.parse(sessionStorage.getItem('smg_attribution') || '{}');
     const payload = { 
         ...data, 
+        imageData,
         attribution,
         timestamp: new Date().toISOString() 
     };
@@ -274,4 +289,49 @@ function showNotification(message, type = 'success') {
             container.remove();
         }
     }, 5000);
+}
+
+/**
+ * Compress image before upload to reduce latency and fit serverless limits
+ */
+async function compressImage(file) {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = (event) => {
+            const img = new Image();
+            img.src = event.target.result;
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                let width = img.width;
+                let height = img.height;
+
+                // Max dimensions 1200px
+                const MAX_WIDTH = 1200;
+                const MAX_HEIGHT = 1200;
+
+                if (width > height) {
+                    if (width > MAX_WIDTH) {
+                        height *= MAX_WIDTH / width;
+                        width = MAX_WIDTH;
+                    }
+                } else {
+                    if (height > MAX_HEIGHT) {
+                        width *= MAX_HEIGHT / height;
+                        height = MAX_HEIGHT;
+                    }
+                }
+
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+
+                // Compress to JPEG with 0.7 quality
+                resolve(canvas.toDataURL('image/jpeg', 0.7));
+            };
+            img.onerror = reject;
+        };
+        reader.onerror = reject;
+    });
 }
