@@ -3,6 +3,45 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // === MULTI-CAMPAIGN CONFIGURATION ===
+    const FESTIVAL_MODE_ACTIVE = true; // Set to false to hide Akshaya Tritiya marketing
+    const FESTIVAL_DATE = new Date('May 16, 2026 00:00:00').getTime(); // Based on user specified date
+
+    // 1. Festival Banner Toggle (Homepage)
+    if (FESTIVAL_MODE_ACTIVE) {
+        const banner = document.getElementById('festival-banner');
+        if (banner) banner.style.display = 'block';
+    }
+
+    // 2. Akshaya Tritiya Countdown Logic (Landing Page)
+    const countdownElements = document.querySelectorAll('.countdown-val');
+    if (countdownElements.length === 3) {
+        const updateCountdown = () => {
+            const now = new Date().getTime();
+            const distance = FESTIVAL_DATE - now;
+
+            if (distance < 0) {
+                countdownElements[0].innerText = "00";
+                countdownElements[1].innerText = "00";
+                countdownElements[2].innerText = "00";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            countdownElements[0].innerText = days.toString().padStart(2, '0');
+            countdownElements[1].innerText = hours.toString().padStart(2, '0');
+            countdownElements[2].innerText = minutes.toString().padStart(2, '0');
+        };
+        
+        updateCountdown();
+        setInterval(updateCountdown, 60000); // update every minute
+    }
+    // ===================================
+
     // Reveal Animations using Intersection Observer
     const observerOptions = { threshold: 0.1 };
     const observer = new IntersectionObserver((entries) => {

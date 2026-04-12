@@ -1314,3 +1314,35 @@ h4,
 }
 
 
+
+
+/* Festival Banner Styles */
+.festival-banner {
+    background: linear-gradient(135deg, var(--maroon) 0%, #4a0000 100%);
+    color: var(--gold);
+    padding: 10px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    z-index: 1001;
+    position: relative;
+    border-bottom: 1px solid var(--gold-light);
+}
+
+.btn-festival {
+    background: var(--gold);
+    color: var(--maroon);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: transform 0.2s, background 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-festival:hover {
+    transform: scale(1.05);
+    background: #fff;
+}
+
