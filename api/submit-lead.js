@@ -26,27 +26,34 @@ export default async function handler(req, res) {
   const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN;
   const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
+  // Sanitize and Truncate Helper
+  const clean = (text) => (text || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  const truncate = (text, limit) => text.length > limit ? text.substring(0, limit) + '...' : text;
+
   // Build the notification message
   const now = new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' });
   let message = `🔔 <b>New Lead — SMG Jewellers</b>\n\n`;
-  message += `👤 <b>Name:</b> ${name}\n`;
-  message += `📞 <b>Phone:</b> ${phone}\n`;
-  message += `📍 <b>Context:</b> ${source || 'Website'}\n`;
+  message += `👤 <b>Name:</b> ${clean(name)}\n`;
+  message += `📞 <b>Phone:</b> ${clean(phone)}\n`;
+  message += `📍 <b>Context:</b> ${clean(source || 'Website')}\n`;
 
   if (design) {
-    message += `💎 <b>Design Idea:</b> ${design}\n`;
+    message += `💎 <b>Design Idea:</b> ${clean(truncate(design, 500))}\n`;
   }
 
   // Marketing Attribution section
   if (attribution && Object.keys(attribution).length > 0) {
     message += `\n🎯 <b>Campaign Data:</b>\n`;
-    if (attribution.utm_source) message += `▫️ Source: ${attribution.utm_source}\n`;
-    if (attribution.utm_medium) message += `▫️ Medium: ${attribution.utm_medium}\n`;
-    if (attribution.utm_campaign) message += `▫️ Campaign: ${attribution.utm_campaign}\n`;
+    if (attribution.utm_source) message += `▫️ Source: ${clean(attribution.utm_source)}\n`;
+    if (attribution.utm_medium) message += `▫️ Medium: ${clean(attribution.utm_medium)}\n`;
+    if (attribution.utm_campaign) message += `▫️ Campaign: ${clean(attribution.utm_campaign)}\n`;
     if (attribution.gclid) message += `▫️ Google Click ID: Found\n`;
   }
 
   message += `\n🕐 <i>${now}</i>`;
+
+  // Final length safety check for Telegram SendPhoto (1024 limit)
+  message = truncate(message, 1000);
 
   // If Telegram credentials are missing, log and return success
   if (!BOT_TOKEN || !CHAT_ID) {
