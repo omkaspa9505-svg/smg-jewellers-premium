@@ -1207,28 +1207,216 @@ h4,
 }
 
 /* ==========================================
-   MOBILE FIRST - Comprehensive Mobile Fixes
+   TABLET - Medium screens
+   ========================================== */
+@media (max-width: 1024px) {
+    .hero-title {
+        font-size: 3.5rem;
+    }
+
+    .split-hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 3rem;
+    }
+
+    .savings-container {
+        grid-template-columns: 1fr;
+    }
+
+    .comparison-ui {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .masonry {
+        column-count: 2;
+    }
+}
+
+/* ==========================================
+   MOBILE - Comprehensive Mobile Fixes
    ========================================== */
 @media (max-width: 768px) {
 
-    /* Header shrinks on mobile */
+    /* === HEADER & NAVIGATION === */
     .header {
         padding: 0.8rem 5%;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    /* Hide desktop nav links, keep header clean */
+    .nav-links {
+        display: none !important;
     }
 
     /* Rate button smaller on mobile */
     #open-rates-btn {
         padding: 0.4rem 0.9rem !important;
-        font-size: 0.75rem !important;
+        font-size: 0.7rem !important;
         letter-spacing: 0;
+        white-space: nowrap;
     }
 
-    /* Logo smaller on mobile */
-    .logo {
-        font-size: 1.3rem;
+    /* === HERO SECTION === */
+    .hero {
+        padding: 0 4%;
+        align-items: flex-end;
+        padding-bottom: 4rem;
+        min-height: 85vh;
     }
 
-    /* Modal full-width on mobile */
+    .hero-content {
+        padding-top: 0;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.15;
+    }
+
+    .hero-subtitle {
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-text {
+        font-size: 0.95rem;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(to top, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.7) 40%, rgba(250, 247, 242, 0.3) 100%) !important;
+    }
+
+    /* === BUTTONS === */
+    .btn {
+        padding: 0.9rem 1.8rem;
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+    }
+
+    /* === SECTIONS === */
+    .section {
+        padding: 4rem 0;
+    }
+
+    .page-header {
+        padding: 8rem 5% 3rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    /* === SAVINGS / LEAD FORM === */
+    .savings-container {
+        grid-template-columns: 1fr;
+        border-radius: 12px;
+    }
+
+    .savings-content,
+    .savings-form-wrapper {
+        padding: 2rem;
+    }
+
+    .savings-content h2 {
+        font-size: 2rem;
+    }
+
+    /* === GALLERY MASONRY === */
+    .masonry {
+        column-count: 1;
+        padding: 2rem 5%;
+    }
+
+    /* === REVIEWS === */
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .review-card {
+        padding: 2rem;
+    }
+
+    .review-card-fixed {
+        min-width: 260px;
+    }
+
+    /* === ABOUT PAGE === */
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-img {
+        box-shadow: -10px 10px 0 var(--gold-light);
+    }
+
+    .trust-banner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 4rem 5%;
+    }
+
+    /* === CUSTOM DESIGNS PAGE === */
+    .split-hero {
+        padding: 6rem 5% 3rem;
+    }
+
+    .split-hero h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+
+    .split-hero p {
+        font-size: 1rem;
+    }
+
+    .massive-btn {
+        font-size: 1rem;
+        padding: 1.2rem 2rem;
+        margin-top: 0;
+    }
+
+    .comparison-ui {
+        grid-template-columns: 1fr;
+    }
+
+    .comp-card {
+        padding: 2rem;
+    }
+
+    .comp-price-new {
+        font-size: 2.5rem;
+    }
+
+    /* === FOOTER === */
+    .footer {
+        padding: 4rem 5% 2rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    /* === RATE MODAL === */
     .modal-content {
         width: 95%;
         max-height: 88vh;
@@ -1266,83 +1454,52 @@ h4,
         padding: 0.8rem 1rem !important;
     }
 
-    /* Hero responsive */
-    .hero {
-        padding: 0 4%;
-        align-items: flex-end;
-        padding-bottom: 4rem;
+    /* === WHATSAPP BUTTON === */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 1.5rem;
+        right: 1.5rem;
     }
 
-    .hero-content {
-        padding-top: 0;
+    /* === LIVE RATE TICKER === */
+    .live-rate {
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+        gap: 0.8rem;
     }
 
-    /* Savings form stacks cleanly */
-    .savings-content,
-    .savings-form-wrapper {
-        padding: 2rem;
+    /* === TYPOGRAPHY === */
+    h2 {
+        font-size: 2rem !important;
+    }
+}
+
+/* ==========================================
+   SMALL MOBILE - Extra small screens
+   ========================================== */
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
     }
 
-    /* Custom designs hero */
-    .split-hero {
-        padding: 6rem 5% 3rem;
+    .hero-title {
+        font-size: 2rem;
     }
 
     .split-hero h1 {
-        font-size: 2.2rem;
-        line-height: 1.2;
+        font-size: 1.8rem;
     }
 
-    /* Review marquee */
-    .review-card-fixed {
-        min-width: 260px;
+    .massive-btn {
+        font-size: 0.9rem;
+        padding: 1rem 1.5rem;
+        width: 100%;
+        justify-content: center;
     }
 
-    /* Footer grid stacks */
-    .footer {
-        padding: 4rem 5% 2rem;
-    }
-
-    .footer-grid {
-        gap: 2rem;
-    }
-
-    /* Section padding reduced */
-    .section {
-        padding: 5rem 0;
+    .container {
+        padding: 0 4%;
     }
 }
-
-
-
-
-/* Festival Banner Styles */
-.festival-banner {
-    background: linear-gradient(135deg, var(--maroon) 0%, #4a0000 100%);
-    color: var(--gold);
-    padding: 10px 0;
-    text-align: center;
-    font-size: 0.9rem;
-    z-index: 1001;
-    position: relative;
-    border-bottom: 1px solid var(--gold-light);
-}
-
-.btn-festival {
-    background: var(--gold);
-    color: var(--maroon);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 0.8rem;
-    transition: transform 0.2s, background 0.3s;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-festival:hover {
-    transform: scale(1.05);
-    background: #fff;
-}
-
