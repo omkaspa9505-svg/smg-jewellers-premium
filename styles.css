@@ -1515,3 +1515,17 @@ h4,
         padding: 0 4%;
     }
 }
+
+/* Mobile Overrides */
+@media (max-width: 768px) {
+    .wa-tooltip { display: none !important; }
+    .hero-content .btn {
+        margin-left: 0 !important;
+        display: inline-block;
+        padding: 15px 30px !important;
+    }
+    .hero-content {
+        padding: 0 15px;
+        text-align: left;
+    }
+}
