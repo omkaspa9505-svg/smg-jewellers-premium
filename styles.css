@@ -269,65 +269,6 @@ h4,
         box-sizing: border-box !important;
     }
 
-    /* Mobile Header transparency */
-    .header {
-        background: transparent !important;
-        backdrop-filter: none !important;
-        box-shadow: none !important;
-    }
-    
-    .header.scrolled {
-        background: rgba(250, 247, 242, 0.95) !important;
-        backdrop-filter: blur(10px) !important;
-        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
-    }
-
-    /* High contrast text for transparent mobile header (over dark image) */
-    .header:not(.scrolled) .logo {
-        color: var(--cream) !important;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
-    }
-    .header:not(.scrolled) .mobile-menu-toggle {
-        color: var(--cream) !important;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
-    }
-    .header:not(.scrolled) #open-rates-btn {
-        background: rgba(255, 255, 255, 0.15) !important;
-        color: var(--cream) !important;
-        border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    }
-
-    /* Hero responsive */
-    .hero {
-        padding: 0 4% !important;
-        align-items: flex-end !important;
-        padding-bottom: 4rem !important;
-        min-height: 100vh !important;
-    }
-
-    .hero-content {
-        padding-top: 0 !important;
-        text-align: left !important;
-        z-index: 2 !important;
-    }
-
-    /* Remove blur overlay completely on mobile as requested */
-    .hero-overlay {
-        display: none !important;
-    }
-
-    /* High contrast for hero text over dark image */
-    .hero-title {
-        color: var(--cream) !important;
-        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important;
-    }
-    
-    .hero-text {
-        color: rgba(250, 247, 242, 0.95) !important;
-        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
-        font-weight: 500 !important;
-    }
-
     .whatsapp-float {
         width: 70px !important;
         height: 70px !important;
