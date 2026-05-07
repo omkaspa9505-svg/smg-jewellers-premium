@@ -269,18 +269,17 @@ h4,
         box-sizing: border-box !important;
     }
 
-    /* Hero Section Fixes */
+    /* Hero responsive */
     .hero {
-        padding-top: 80px !important;
-        min-height: 70vh !important;
+        padding: 0 4% !important;
+        align-items: flex-end !important;
+        padding-bottom: 4rem !important;
+        min-height: auto !important; /* Reverting any min-height overrides */
     }
-    
-    .hero-overlay {
-        background: linear-gradient(to top, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.7) 40%, rgba(250, 247, 242, 0.3) 100%) !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        mask-image: none !important;
-        -webkit-mask-image: none !important;
+
+    .hero-content {
+        padding-top: 0 !important;
+        text-align: left !important;
     }
 
     .whatsapp-float {
@@ -297,17 +296,6 @@ h4,
         right: 95px !important;
         font-size: 15px !important;
         padding: 8px 15px !important;
-    }
-
-    .hero-title {
-        font-size: 2.3rem !important;
-        margin-bottom: 1rem !important;
-    }
-
-    .hero-text {
-        font-size: 1rem !important;
-        margin-bottom: 1.5rem !important;
-        opacity: 0.9;
     }
 
     /* Collections Grid (Premium 2-column Layout) */
