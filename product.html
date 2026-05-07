@@ -157,7 +157,7 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-N68W9R42');</script>
+    })(window,document,'script','dataLayer','GTM-WTC3RZSS');</script>
     <!-- End Google Tag Manager -->
 
     <!-- Google Ads Conversion Tracking -->
@@ -171,36 +171,14 @@
 </head>
 
 <body class="product-page">
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N68W9R42"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <header class="header">
-        <a href="index.html" class="logo">SMG <span>Jewellers</span></a>
-        <nav class="nav-links">
-            <a class="nav-link" href="index.html">Home</a>
-            <a class="nav-link" href="about.html">Our Story</a>
-            <a class="nav-link" href="gallery.html">Collections</a>
-            <a class="nav-link" href="custom-designs.html">Custom Orders</a>
-        </nav>
-        <button class="btn live-rate" id="open-rates-btn"><div class="pulse"></div> Today's Gold Rate</button>
-    
-    <div class="mobile-menu-toggle" id="mobile-menu-toggle">
-        <i class="fa-solid fa-bars"></i>
-    </div>
-</header>
-<div class="mobile-nav-overlay" id="mobile-nav-overlay">
-    <div class="mobile-nav-header">
-        <a class="logo" href="index.html">SMG<span>JEWELLERS</span></a>
-        <button class="close-menu-btn" id="close-menu-btn"><i class="fa-solid fa-xmark"></i></button>
-    </div>
-    <div class="mobile-nav-body">
-        <a href="index.html">Home</a>
-        <a href="about.html">Our Story</a>
-        <a href="gallery.html">Collections</a>
-        <a href="custom-designs.html">Custom Designs</a>
-    </div>
-</div>
+        <a href="index.html" class="logo">SMG<span>JEWELLERS</span></a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Collections</a>
+            <a href="custom-designs.html">Custom</a>
+        </div>
+    </header>
 
     <main class="product-container">
         <div class="p-image-card">
@@ -341,65 +319,6 @@
         </div>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
-
-    if(mobileMenuToggle && mobileNavOverlay && closeMenuBtn) {
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileNavOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeMenuBtn.addEventListener('click', () => {
-            mobileNavOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-});
-</script>
-
-<!-- WhatsApp Float Button -->
-<a href="https://wa.me/919014659444?text=Hi, I have an inquiry about SMG Jewellers." target="_blank" class="wa-float" style="position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 30px; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 9999; text-decoration: none; transition: transform 0.3s ease;">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- Mobile Sticky Nav -->
-<nav class="mobile-sticky-nav">
-    <a href="index.html" class="nav-item" id="nav-home">
-        <i class="fa-solid fa-house"></i>
-        <span>Home</span>
-    </a>
-    <a href="gallery.html" class="nav-item" id="nav-collections">
-        <i class="fa-solid fa-gem"></i>
-        <span>Collections</span>
-    </a>
-    <a href="custom-designs.html" class="nav-item" id="nav-custom">
-        <i class="fa-solid fa-wand-magic-sparkles"></i>
-        <span>Custom</span>
-    </a>
-    <a href="https://wa.me/919014659444" class="nav-item" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-        <span>Chat</span>
-    </a>
-</nav>
-<script>
-    // Highlight active nav item
-    document.addEventListener("DOMContentLoaded", () => {
-        const path = window.location.pathname;
-        if(path.includes('gallery') || path.includes('product')) {
-            document.getElementById('nav-collections')?.classList.add('active');
-        } else if(path.includes('custom')) {
-            document.getElementById('nav-custom')?.classList.add('active');
-        } else {
-            document.getElementById('nav-home')?.classList.add('active');
-        }
-    });
-</script>
-
 </body>
 
 </html>

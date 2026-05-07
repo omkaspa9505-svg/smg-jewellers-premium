@@ -3,23 +3,6 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Logic (Global)
-    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
-    const mobileNavOverlay = document.getElementById('mobile-nav-overlay');
-    const closeMenuBtn = document.getElementById('close-menu-btn');
-
-    if(mobileMenuToggle && mobileNavOverlay && closeMenuBtn) {
-        mobileMenuToggle.addEventListener('click', () => {
-            mobileNavOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        closeMenuBtn.addEventListener('click', () => {
-            mobileNavOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-    }
-
 
     // Reveal Animations using Intersection Observer
     const observerOptions = { threshold: 0.1 };
@@ -129,19 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
-
-    // WhatsApp Click Tracking
-    document.body.addEventListener('click', (e) => {
-        const link = e.target.closest('a');
-        if (link && link.href && link.href.includes('wa.me')) {
-            window.dataLayer = window.dataLayer || [];
-            window.dataLayer.push({
-                'event': 'whatsapp_click',
-                'action': 'whatsapp_chat_initiated',
-                'page_path': window.location.pathname
-            });
-        }
-    });
 
     // --- Performance Marketing: Attribution Capture ---
     captureUTMs();
@@ -285,14 +255,6 @@ async function submitLead(data, form) {
         // Fallback: open WhatsApp if API fails
         const utmString = attribution.utm_source ? ` [Source: ${attribution.utm_source}]` : '';
         const msg = encodeURIComponent(`Hi SMG Jewellers! My name is ${data.name}. Phone: ${data.phone}. ${data.design ? 'Design idea: ' + data.design : data.source}${utmString}`);
-        
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            'event': 'whatsapp_click',
-            'action': 'whatsapp_fallback_initiated',
-            'lead_type': data.source
-        });
-
         window.open(`https://wa.me/919014659444?text=${msg}`, '_blank');
     } finally {
         if (submitBtn) {
