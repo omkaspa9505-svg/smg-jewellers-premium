@@ -269,7 +269,7 @@ h4,
         box-sizing: border-box !important;
     }
 
-    /* Make header transparent again so it seamlessly blends with the hero overlay */
+    /* Mobile Header transparency */
     .header {
         background: transparent !important;
         backdrop-filter: none !important;
@@ -280,6 +280,21 @@ h4,
         background: rgba(250, 247, 242, 0.95) !important;
         backdrop-filter: blur(10px) !important;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    /* High contrast text for transparent mobile header (over dark image) */
+    .header:not(.scrolled) .logo {
+        color: var(--cream) !important;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+    }
+    .header:not(.scrolled) .mobile-menu-toggle {
+        color: var(--cream) !important;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+    }
+    .header:not(.scrolled) #open-rates-btn {
+        background: rgba(255, 255, 255, 0.15) !important;
+        color: var(--cream) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
     }
 
     /* Hero responsive */
@@ -296,14 +311,21 @@ h4,
         z-index: 2 !important;
     }
 
-    /* Cinematic top & bottom cream blur to frame the jewelry and make logo/text readable */
+    /* Remove blur overlay completely on mobile as requested */
     .hero-overlay {
-        background: linear-gradient(to bottom, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.6) 18%, transparent 35%, transparent 60%, rgba(250, 247, 242, 0.7) 80%, rgba(250, 247, 242, 0.98) 100%) !important;
-        backdrop-filter: blur(12px) !important;
-        -webkit-backdrop-filter: blur(12px) !important;
-        mask-image: linear-gradient(to bottom, black 0%, black 12%, transparent 32%, transparent 60%, black 85%, black 100%) !important;
-        -webkit-mask-image: linear-gradient(to bottom, black 0%, black 12%, transparent 32%, transparent 60%, black 85%, black 100%) !important;
-        z-index: 1 !important;
+        display: none !important;
+    }
+
+    /* High contrast for hero text over dark image */
+    .hero-title {
+        color: var(--cream) !important;
+        text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important;
+    }
+    
+    .hero-text {
+        color: rgba(250, 247, 242, 0.95) !important;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+        font-weight: 500 !important;
     }
 
     .whatsapp-float {
