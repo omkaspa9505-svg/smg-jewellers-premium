@@ -269,9 +269,15 @@ h4,
         box-sizing: border-box !important;
     }
 
-    /* Mobile Header always frosted cream for logo visibility */
+    /* Make header transparent again so it seamlessly blends with the hero overlay */
     .header {
-        background: rgba(250, 247, 242, 0.90) !important;
+        background: transparent !important;
+        backdrop-filter: none !important;
+        box-shadow: none !important;
+    }
+    
+    .header.scrolled {
+        background: rgba(250, 247, 242, 0.95) !important;
         backdrop-filter: blur(10px) !important;
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
     }
@@ -290,12 +296,13 @@ h4,
         z-index: 2 !important;
     }
 
+    /* Cinematic top & bottom cream blur to frame the jewelry and make logo/text readable */
     .hero-overlay {
-        background: linear-gradient(to top, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.7) 40%, transparent 100%) !important;
-        backdrop-filter: blur(10px) !important;
-        -webkit-backdrop-filter: blur(10px) !important;
-        mask-image: linear-gradient(to top, black 0%, transparent 70%) !important;
-        -webkit-mask-image: linear-gradient(to top, black 0%, transparent 70%) !important;
+        background: linear-gradient(to bottom, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.6) 18%, transparent 35%, transparent 60%, rgba(250, 247, 242, 0.7) 80%, rgba(250, 247, 242, 0.98) 100%) !important;
+        backdrop-filter: blur(12px) !important;
+        -webkit-backdrop-filter: blur(12px) !important;
+        mask-image: linear-gradient(to bottom, black 0%, black 12%, transparent 32%, transparent 60%, black 85%, black 100%) !important;
+        -webkit-mask-image: linear-gradient(to bottom, black 0%, black 12%, transparent 32%, transparent 60%, black 85%, black 100%) !important;
         z-index: 1 !important;
     }
 
