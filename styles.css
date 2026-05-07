@@ -269,17 +269,34 @@ h4,
         box-sizing: border-box !important;
     }
 
+    /* Mobile Header always frosted cream for logo visibility */
+    .header {
+        background: rgba(250, 247, 242, 0.90) !important;
+        backdrop-filter: blur(10px) !important;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+    }
+
     /* Hero responsive */
     .hero {
         padding: 0 4% !important;
         align-items: flex-end !important;
         padding-bottom: 4rem !important;
-        min-height: auto !important; /* Reverting any min-height overrides */
+        min-height: 100vh !important;
     }
 
     .hero-content {
         padding-top: 0 !important;
         text-align: left !important;
+        z-index: 2 !important;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(to top, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.7) 40%, transparent 100%) !important;
+        backdrop-filter: blur(10px) !important;
+        -webkit-backdrop-filter: blur(10px) !important;
+        mask-image: linear-gradient(to top, black 0%, transparent 70%) !important;
+        -webkit-mask-image: linear-gradient(to top, black 0%, transparent 70%) !important;
+        z-index: 1 !important;
     }
 
     .whatsapp-float {
