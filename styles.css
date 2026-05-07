@@ -276,12 +276,39 @@ h4,
     }
     
     .hero-overlay {
-        backdrop-filter: blur(5px);
-    transition: all 0.4s ease;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        mask-image: none !important;
-        -webkit-mask-image: none !important;
+        background: linear-gradient(to top, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.5) 40%, transparent 100%) !important;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        mask-image: linear-gradient(to top, black 0%, transparent 80%);
+        -webkit-mask-image: linear-gradient(to top, black 0%, transparent 80%);
+        z-index: 1;
+    }
+
+    .whatsapp-float {
+        width: 70px !important;
+        height: 70px !important;
+        font-size: 36px !important;
+        bottom: 95px !important;
+        right: 20px !important;
+        box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5) !important;
+    }
+
+    .wa-tooltip {
+        bottom: 110px !important;
+        right: 95px !important;
+        font-size: 15px !important;
+        padding: 8px 15px !important;
+    }
+
+    .hero-title {
+        font-size: 2.3rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-text {
+        font-size: 1rem !important;
+        margin-bottom: 1.5rem !important;
+        opacity: 0.9;
     }
 
     /* Collections Grid (Premium 2-column Layout) */
@@ -2124,4 +2151,15 @@ html, body {
     }
 
 
+}
+
+@media (max-width: 768px) {
+    .whatsapp-float {
+        bottom: 85px !important;
+        right: 20px !important;
+    }
+    .wa-tooltip {
+        bottom: 95px !important;
+        right: 85px !important;
+    }
 }
