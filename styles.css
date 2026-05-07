@@ -276,7 +276,8 @@ h4,
     }
     
     .hero-overlay {
-        background: linear-gradient(to top, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.7) 40%, rgba(250, 247, 242, 0.3) 100%) !important;
+        backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
         mask-image: none !important;
@@ -1482,7 +1483,8 @@ h4,
     }
 
     .hero-overlay {
-        background: linear-gradient(to top, rgba(250, 247, 242, 0.95) 0%, rgba(250, 247, 242, 0.7) 40%, rgba(250, 247, 242, 0.3) 100%) !important;
+        backdrop-filter: blur(5px);
+    transition: all 0.4s ease;
         backdrop-filter: none !important;
         -webkit-backdrop-filter: none !important;
     }
@@ -1700,7 +1702,7 @@ h4,
 
 /* Mobile Overrides */
 @media (max-width: 768px) {
-    .wa-tooltip { display: none !important; }
+
     .hero-content .btn {
         margin-left: 0 !important;
         display: inline-block;
@@ -2121,12 +2123,5 @@ html, body {
         text-align: center !important;
     }
 
-    /* Hide floating WhatsApp — sticky nav already has Chat */
-    .whatsapp-float,
-    .wa-float,
-    a[class*='whatsapp-float'],
-    a[class*='wa-float'],
-    .wa-tooltip {
-        display: none !important;
-    }
+
 }
