@@ -270,19 +270,19 @@ h4,
     }
 
     .whatsapp-float {
-        width: 70px !important;
-        height: 70px !important;
-        font-size: 36px !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 28px !important;
         bottom: 95px !important;
-        right: 20px !important;
-        box-shadow: 0 10px 40px rgba(37, 211, 102, 0.5) !important;
+        right: 15px !important;
+        box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4) !important;
     }
 
     .wa-tooltip {
-        bottom: 110px !important;
-        right: 95px !important;
-        font-size: 15px !important;
-        padding: 8px 15px !important;
+        bottom: 105px !important;
+        right: 75px !important;
+        font-size: 13px !important;
+        padding: 6px 12px !important;
     }
 
     /* Collections Grid (Premium 2-column Layout) */
