@@ -1461,14 +1461,14 @@ h4,
         margin-top: 2px;
     }
 
-    /* Make logo and menu toggle white when over the dark hero image (before scrolling) */
-    .header:not(.scrolled) .logo {
+    /* Make logo and menu toggle white when over the dark hero image (before scrolling) ONLY on dark hero pages */
+    .dark-hero-page .header:not(.scrolled) .logo {
         color: var(--cream) !important;
     }
-    .header:not(.scrolled) .logo span {
+    .dark-hero-page .header:not(.scrolled) .logo span {
         color: var(--gold) !important;
     }
-    .header:not(.scrolled) .mobile-menu-toggle {
+    .dark-hero-page .header:not(.scrolled) .mobile-menu-toggle {
         color: var(--cream) !important;
     }
 
@@ -1595,16 +1595,23 @@ h4,
 
     /* === CUSTOM DESIGNS PAGE === */
     .split-hero {
-        padding: 6rem 5% 3rem;
+        padding: 5rem 5% 1rem; /* Bring form higher up on mobile */
     }
 
     .split-hero h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem; /* Smaller hero title to save space */
         line-height: 1.2;
     }
 
     .split-hero p {
-        font-size: 1rem;
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* Shrink the form padding on mobile so it fits perfectly */
+    .custom-lead-box {
+        padding: 1.5rem !important;
+        margin-bottom: 2rem !important;
     }
 
     .massive-btn {
