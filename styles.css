@@ -298,29 +298,33 @@ h4,
         position: relative !important;
         height: auto !important;
         background: transparent !important;
-        border-radius: 0 !important;
+        border-radius: 16px !important;
+        border: none !important; /* Removes the yellow line inherited from desktop */
         box-shadow: none !important;
         display: block !important;
         text-decoration: none !important;
+        overflow: hidden !important; /* Ensures the child elements respect the rounded corners */
     }
 
     .masonry-item img {
         height: 160px !important;
         width: 100% !important;
         object-fit: cover !important;
-        border-radius: 16px !important; /* Soft, elegant rounded corners like reference */
-        box-shadow: none !important; /* No shadows for that flat, clean look */
-        margin-bottom: 0.3rem !important;
+        border-radius: 16px 16px 0 0 !important; /* Top corners rounded, bottom flat */
+        box-shadow: none !important; 
+        margin-bottom: 0 !important;
+        display: block !important;
     }
 
     .masonry-hover {
         position: static !important;
         opacity: 1 !important;
-        background: transparent !important;
-        padding: 0.4rem 0.2rem !important;
-        text-align: center !important; /* Perfectly centered like reference */
+        background: #FDF6E9 !important; /* Distinct, premium light beige for the text area */
+        padding: 0.8rem 0.4rem !important;
+        text-align: center !important; 
         transform: none !important;
         visibility: visible !important;
+        border-radius: 0 0 16px 16px !important; /* Bottom corners rounded */
     }
 
     .item-name {
