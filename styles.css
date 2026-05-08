@@ -1595,23 +1595,28 @@ h4,
 
     /* === CUSTOM DESIGNS PAGE === */
     .split-hero {
-        padding: 5rem 5% 1rem; /* Bring form higher up on mobile */
+        padding: 4rem 5% 1rem; /* Extremely tight top padding */
     }
 
     .split-hero h1 {
-        font-size: 1.8rem; /* Smaller hero title to save space */
-        line-height: 1.2;
+        font-size: 1.6rem; /* Smaller hero title to save space */
+        line-height: 1.15;
+        margin-bottom: 0.5rem;
     }
 
     .split-hero p {
-        font-size: 0.95rem !important;
-        margin-bottom: 1.5rem !important;
+        display: none !important; /* Hide description on mobile to push form up */
     }
 
     /* Shrink the form padding on mobile so it fits perfectly */
     .custom-lead-box {
-        padding: 1.5rem !important;
+        padding: 1.25rem !important;
         margin-bottom: 2rem !important;
+    }
+
+    .custom-lead-box h3 {
+        font-size: 1.3rem !important;
+        margin-bottom: 1rem !important;
     }
 
     .massive-btn {
