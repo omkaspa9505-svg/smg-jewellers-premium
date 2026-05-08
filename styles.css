@@ -1446,8 +1446,30 @@ h4,
         padding: 0.8rem 5%;
     }
 
+    /* Mobile Logo - Stacked luxury emblem style to save space */
     .logo {
-        font-size: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+        font-size: 1.6rem !important;
+        align-items: flex-start;
+    }
+    .logo span {
+        font-size: 0.65rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        margin-top: 2px;
+    }
+
+    /* Make logo and menu toggle white when over the dark hero image (before scrolling) */
+    .header:not(.scrolled) .logo {
+        color: var(--cream) !important;
+    }
+    .header:not(.scrolled) .logo span {
+        color: var(--gold) !important;
+    }
+    .header:not(.scrolled) .mobile-menu-toggle {
+        color: var(--cream) !important;
     }
 
     /* Hide desktop nav links, keep header clean */
