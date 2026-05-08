@@ -1605,7 +1605,12 @@ h4,
     }
 
     .split-hero p {
-        display: none !important; /* Hide description on mobile to push form up */
+        display: block !important;
+        font-size: 0.85rem !important;
+        line-height: 1.4;
+        margin-bottom: 1.25rem !important;
+        color: var(--text-light);
+        opacity: 0.8;
     }
 
     /* Shrink the form padding on mobile so it fits perfectly */
