@@ -2074,7 +2074,8 @@ html, body {
     #open-rates-btn { 
         padding: 0.3rem 0.5rem !important; 
         font-size: 0.65rem !important; 
-        margin-left: 0 !important; 
+        margin-left: auto !important; 
+        margin-right: 10px !important;
         gap: 3px !important;
         flex: 0 1 auto;
         min-width: 130px;
